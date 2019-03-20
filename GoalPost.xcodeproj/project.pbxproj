@@ -56,8 +56,11 @@
 		8CE783F62242789A004E7809 /* GoalPost */ = {
 			isa = PBXGroup;
 			children = (
+				8CE7841022427907004E7809 /* Extensions */,
+				8CE7840F22427900004E7809 /* Enums */,
+				8CE7840D224278E1004E7809 /* View */,
+				8CE7840C224278D5004E7809 /* Controller */,
 				8CE783F72242789A004E7809 /* AppDelegate.swift */,
-				8CE783F92242789A004E7809 /* ViewController.swift */,
 				8CE783FB2242789A004E7809 /* Main.storyboard */,
 				8CE784012242789C004E7809 /* Assets.xcassets */,
 				8CE784032242789C004E7809 /* LaunchScreen.storyboard */,
@@ -65,6 +68,35 @@
 				8CE783FE2242789A004E7809 /* GoalPost.xcdatamodeld */,
 			);
 			path = GoalPost;
+			sourceTree = "<group>";
+		};
+		8CE7840C224278D5004E7809 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8CE783F92242789A004E7809 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8CE7840D224278E1004E7809 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8CE7840F22427900004E7809 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		8CE7841022427907004E7809 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
