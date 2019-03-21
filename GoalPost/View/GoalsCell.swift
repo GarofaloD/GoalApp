@@ -38,9 +38,9 @@ class GoalsCell: UITableViewCell {
     }
 
     //MARK:- Custom Funtions
-    func configureCell(description: String, type: String, goalProgressAmount: Int ){
+    func configureCell(description: String, type: GoalType, goalProgressAmount: Int ){
         self.goalDescriptionLbl.text = description
-        self.goalType.text = type
+        self.goalType.text = type.rawValue //Pulling the actual value associated with the enum. In this case the string
         self.goalProgress.text = String(goalProgressAmount)
         
     }

@@ -25,6 +25,9 @@ class GoalsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.isHidden = false
         
         
     }
@@ -39,5 +42,35 @@ class GoalsViewController: UIViewController {
     
     
 
-}
+} //EOC
 
+
+
+extension GoalsViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    
+    //Number of rows
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    //Number of sections
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
+    //Contento of rows
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell") as? GoalsCell else {return   UITableViewCell()}
+        cell.configureCell(description: "Code every day", type: .shortTerm, goalProgressAmount: 5)
+        
+        return cell
+    }
+    
+    
+    
+    
+    
+    
+}
