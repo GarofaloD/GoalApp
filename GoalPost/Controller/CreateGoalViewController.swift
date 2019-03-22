@@ -57,7 +57,7 @@ class CreateGoalViewController: UIViewController {
     }
     
     @IBAction func backWhenPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        dismissDetail()
     }
     
     

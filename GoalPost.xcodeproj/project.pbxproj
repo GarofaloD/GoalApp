@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8C777127224443C500C45A6A /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C777126224443C500C45A6A /* GoalType.swift */; };
 		8C77712922444B9200C45A6A /* CreateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C77712822444B9200C45A6A /* CreateGoalViewController.swift */; };
+		8C77712B22444DE300C45A6A /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C77712A22444DE300C45A6A /* UIViewControllerExt.swift */; };
 		8CE783F82242789A004E7809 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE783F72242789A004E7809 /* AppDelegate.swift */; };
 		8CE783FA2242789A004E7809 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE783F92242789A004E7809 /* GoalsViewController.swift */; };
 		8CE783FD2242789A004E7809 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CE783FB2242789A004E7809 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		8C777126224443C500C45A6A /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
 		8C77712822444B9200C45A6A /* CreateGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalViewController.swift; sourceTree = "<group>"; };
+		8C77712A22444DE300C45A6A /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		8CE783F42242789A004E7809 /* GoalPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoalPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CE783F72242789A004E7809 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CE783F92242789A004E7809 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		8CE7841022427907004E7809 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8C77712A22444DE300C45A6A /* UIViewControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				8C777127224443C500C45A6A /* GoalType.swift in Sources */,
 				8CE783FA2242789A004E7809 /* GoalsViewController.swift in Sources */,
 				8CE783F82242789A004E7809 /* AppDelegate.swift in Sources */,
+				8C77712B22444DE300C45A6A /* UIViewControllerExt.swift in Sources */,
 				8CE784002242789A004E7809 /* GoalPost.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
