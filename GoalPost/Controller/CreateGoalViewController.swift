@@ -9,10 +9,6 @@
 import UIKit
 
 class CreateGoalViewController: UIViewController {
-
-    //MARK:- Properties
-    
-    
     
     
     //MARK:- Outlets
@@ -21,16 +17,8 @@ class CreateGoalViewController: UIViewController {
     @IBOutlet weak var longTermBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
     
-    
-    
-    
-    
-    
     //MARK:- Properties
-    
-    
-    
-    
+    var goalType : GoalType = .shortTerm
     
     
     
@@ -40,7 +28,11 @@ class CreateGoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //Starting values for these elements:
+        nextBtn.bindToKeyboard()
+        shortTermBtn.setSelectedColor()
+        longTermBtn.setDeselectedColor()
+        
     }
     
     
@@ -50,10 +42,16 @@ class CreateGoalViewController: UIViewController {
     
     
     @IBAction func shortTermWhenPressed(_ sender: UIButton) {
+        goalType = .shortTerm
+        shortTermBtn.setSelectedColor()
+        longTermBtn.setDeselectedColor()
     }
     
 
     @IBAction func longTermWhenPressed(_ sender: UIButton) {
+        goalType = .longTerm
+        longTermBtn.setSelectedColor()
+        shortTermBtn.setDeselectedColor()
     }
     
     @IBAction func backWhenPressed(_ sender: UIButton) {
