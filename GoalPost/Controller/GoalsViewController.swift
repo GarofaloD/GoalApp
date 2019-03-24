@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import CoreData
+
+
+//Auxiliary Variables
+let appDelegate = UIApplication.shared.delegate as? AppDelegate //Runninga  delegation of the AppDelegate
+
+
 
 class GoalsViewController: UIViewController {
     
