@@ -44,7 +44,7 @@ class CreateGoalViewController: UIViewController, UITextViewDelegate {
             //Assoc with the storyboard that will take us to the finished goal vc and initializing the data. Once completed, this shoul dtake us to the next VC
             guard let finishedGoalVC = storyboard?.instantiateViewController(withIdentifier: "FinishedGoalVC") as? FinishedGoalViewController else { return }
             finishedGoalVC.initData(description: goalTextField.text, type: goalType)
-            presentDetail(finishedGoalVC)
+            presentingViewController?.presentSecondayDetail(finishedGoalVC)
         }
     }
     
