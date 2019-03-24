@@ -12,18 +12,10 @@ class GoalsCell: UITableViewCell {
 
     //MARK:- Poperties
     
-    
-    
-    
     //MARK:- Outlets
     @IBOutlet weak var goalDescriptionLbl: UILabel!
     @IBOutlet weak var goalType: UILabel!
     @IBOutlet weak var goalProgress: UILabel!
-    
-    
-    
-    
-    
     
     //MARK:- Load Up Functions
     override func awakeFromNib() {
@@ -38,11 +30,10 @@ class GoalsCell: UITableViewCell {
     }
 
     //MARK:- Custom Funtions
-    func configureCell(description: String, type: GoalType, goalProgressAmount: Int ){
-        self.goalDescriptionLbl.text = description
-        self.goalType.text = type.rawValue //Pulling the actual value associated with the enum. In this case the string
-        self.goalProgress.text = String(goalProgressAmount)
-        
+    func configureCell(goal: Goal){
+        self.goalDescriptionLbl.text = goal.goalDescription
+        self.goalType.text = goal.goalType //Pulling the actual value associated with the enum. In this case the string
+        self.goalProgress.text = String(goal.goalProgress)
     }
     
     
