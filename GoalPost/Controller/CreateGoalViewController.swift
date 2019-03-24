@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CreateGoalViewController: UIViewController {
+class CreateGoalViewController: UIViewController, UITextViewDelegate {
     
     
     //MARK:- Outlets
@@ -32,12 +32,20 @@ class CreateGoalViewController: UIViewController {
         nextBtn.bindToKeyboard()
         shortTermBtn.setSelectedColor()
         longTermBtn.setDeselectedColor()
+        goalTextField.delegate = self
         
     }
     
     
     //MARK:- Buttons
     @IBAction func nextWhenPressed(_ sender: UIButton) {
+        //Checking for the goal field not to be ampty
+        if goalTextField.text != "" && goalTextField.text != "What is your goal?" {
+            //Assoc with the storyboard that will take us to the finished goal vc and initializing the data. Once completed, this shoul dtake us to the next VC
+            guard let finishedGoalVC = storyboard?.instantiateViewController(withIdentifier: "FinishedGoalVC") as? FinishedGoalViewController else { return }
+            finishedGoalVC.initData(description: goalTextField.text, type: goalType)
+            presentDetail(finishedGoalVC)
+        }
     }
     
     
@@ -58,7 +66,10 @@ class CreateGoalViewController: UIViewController {
         dismissDetail()
     }
     
-    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        goalTextField.text = ""
+        goalTextField.textColor = UIColor.black
+    }
     
     
 }
