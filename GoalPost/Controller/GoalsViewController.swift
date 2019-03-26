@@ -122,8 +122,15 @@ extension GoalsViewController : UITableViewDelegate, UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         })
         
+        let addAction = UITableViewRowAction(style: .normal, title: "Add 1") { (rowAction, indexPath) in
+            self.setProgress(atIndexPath: indexPath)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
+        
         deleteAction.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
-        return [deleteAction]
+        addAction.backgroundColor = #colorLiteral(red: 0.9960784314, green: 0.6509803922, blue: 0.137254902, alpha: 1)
+        return [deleteAction, addAction]
     }
     
     
@@ -139,6 +146,7 @@ extension GoalsViewController : UITableViewDelegate, UITableViewDataSource {
 
 extension GoalsViewController {
     
+    //Retrieving info from the CoreData model
     func fetch(completion: (_ complete: Bool) -> ()) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
         
@@ -154,7 +162,7 @@ extension GoalsViewController {
         }
     }
     
-    
+    //Deleting goals
     func removeGoal(atIndexPath indexPath: IndexPath){
         guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
         
@@ -169,6 +177,25 @@ extension GoalsViewController {
         
     }
     
+    //Setting progress on the app
+    func setProgress(atIndexPath indexPath: IndexPath) { //passing the row selected
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+        
+        let chosenGoal = goals[indexPath.row]
+        
+        if chosenGoal.goalProgress < chosenGoal.goalCompletionValue {
+            chosenGoal.goalProgress = chosenGoal.goalProgress + 1
+        } else {
+            return
+        }
+        
+        do {
+            try managedContext.save()
+            print("Data saved successfully")
+        } catch {
+            debugPrint("Data could not be saved: \(error.localizedDescription)")
+        }
+    }
     
     
     
